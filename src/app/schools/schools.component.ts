@@ -17,7 +17,7 @@ export class SchoolsComponent {
   //exemplo de event binding
   createdSchoolStatus = "Nenhuma escola criada";
   // ex 2
-  schoolName = "";
+  schoolName = '';
 
 
   ngOnInit(): void{
