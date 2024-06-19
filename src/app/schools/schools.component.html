@@ -1,15 +1,17 @@
 <label for=""> Nome da Escola</label>
-    <!--<input type="text" class="form-control" (input)="updateSchoolName($event)"> -->
-
     <input type="text" class="form-control" [(ngModel)]="schoolName" placeholder="digite o nome da escola" >
-        <p> O nome da escola é {{schoolName}} </p>
     
 <!-- exemplo de property binding-->                        <!--exemplo de event binding-->    
-<button class="btn btn-primary" [disabled]="!aceitaNovaEscola"  (click)="createSchool()"> Incluir </button>
-<!-- <p {innerText]="aceitaNovaEscola"}></p>-->
+<button 
+    class="btn btn-primary mt-2 mb-2" 
+    [disabled]="!allowNewSchool"  
+    (click)="createSchool()"> Incluir 
+</button>
 
-    <p>{{createdSchoolStatus}}</p>
-
+<p *ngIf="schoolCreated; else noSchool"> A escola foi criada: {{schoolName}}</p>
+<ng-template #noSchool>
+    <p>Nenhuma escola foi criada </p>
+</ng-template>
 
 <app-school></app-school>
 <app-school></app-school>

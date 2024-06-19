@@ -1,34 +1,37 @@
 import { Component } from '@angular/core';
 import { SchoolComponent } from '../school/school.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-schools',
   standalone: true,
-  imports: [SchoolComponent, FormsModule],
+  imports: [SchoolComponent, FormsModule, CommonModule],
   templateUrl: './schools.component.html',
   styleUrl: './schools.component.css'
 })
 export class SchoolsComponent {
 
   //exemplo de property binding 
-  aceitaNovaEscola = false; 
+  allowNewSchool = false; 
 
   //exemplo de event binding
   createdSchoolStatus = "Nenhuma escola criada";
   // ex 2
-  schoolName = '';
+  schoolName = "Nome de teste da Escola";
+  schoolCreated = false;
 
 
   ngOnInit(): void{
     setTimeout(() => {
-      this.aceitaNovaEscola = true; 
+      this.allowNewSchool = true; 
     }, 3000);  // essa função muda o valor da variavel depois de 3 mil milisegundos, alterando de forma dinamica uma propriedade
   }
 
   //exemplo de event binding 
   createSchool(){
-    this.createdSchoolStatus = "Escola foi criada"
+    this.schoolCreated = true;
+    this.createdSchoolStatus = "Escola foi criada! E seu nome é: " + this.schoolName
   }
 
   // ex 2
