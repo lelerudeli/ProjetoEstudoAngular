@@ -11,10 +11,21 @@ export class SchoolComponent{
 
     //exemplo de interpolação de string 
     schoolID = 10;
-    schoolName = 'IFSP'
+    schoolName = 'IFSP';
+    schoolSituation = 'aberta';
+
+    constructor(){
+        this.schoolSituation = Math.random() > 0.5 ? 'aberta' : 'fechada';
+    }
 
     getSchoolName(){
         return this.schoolName; 
     }
+
+    getStatusColor(){
+        return this.schoolSituation == 'aberta' ? 'green' : 'red'; 
+    }
+
+
 
 }

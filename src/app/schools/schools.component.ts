@@ -20,6 +20,12 @@ export class SchoolsComponent {
   // ex 2
   schoolName = "Nome de teste da Escola";
   schoolCreated = false;
+  schools = ['escola 1', 'escola 2']
+
+  constructor(){
+
+  }
+
 
 
   ngOnInit(): void{
@@ -31,7 +37,8 @@ export class SchoolsComponent {
   //exemplo de event binding 
   createSchool(){
     this.schoolCreated = true;
-    this.createdSchoolStatus = "Escola foi criada! E seu nome é: " + this.schoolName
+    this.createdSchoolStatus = "Escola foi criada! E seu nome é: " + this.schoolName;
+    this.schools.push(this.schoolName)
   }
 
   // ex 2
