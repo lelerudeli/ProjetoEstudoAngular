@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input  } from '@angular/core';
 import { Package } from '../package.model';
+import { PackagesListService } from '../../../services/packages-list.service';
 
 @Component({
   selector: 'app-packages-item',
@@ -11,10 +12,16 @@ import { Package } from '../package.model';
 export class PackagesItemComponent {
 
   @Input() package! : Package;
-  @Output() packageSelected = new EventEmitter<void>();
+
+  constructor(
+    private packageService: PackagesListService
+  ){
+
+  }
 
   onSelected(){
-    this.packageSelected.emit
+    this.packageService.packageSelected.emit(this.package);
+
   }
 
 }

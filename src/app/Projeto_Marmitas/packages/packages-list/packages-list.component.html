@@ -8,9 +8,9 @@
     <div class="col-12">
 
          <app-packages-item 
-         *ngFor="let packageElement of packages" 
+         *ngFor="let packageElement of package" 
          [package]="packageElement"
-         (packageSelected)="onPackageSelected(packageElement)"
+         
          ></app-packages-item>
        
     </div>

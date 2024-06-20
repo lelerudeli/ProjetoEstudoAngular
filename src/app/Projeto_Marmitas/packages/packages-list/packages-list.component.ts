@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { PackagesItemComponent } from './packages-item/packages-item.component';
 import { Package } from './package.model';
 import { CommonModule } from '@angular/common';
+import { PackagesListService } from '../../services/packages-list.service';
 
 @Component({
   selector: 'app-packages-list',
@@ -12,15 +13,15 @@ import { CommonModule } from '@angular/common';
 })
 export class PackagesListComponent {
 
-  @Output() packageWasSelected = new EventEmitter<Package>();
+  package?: Package[];
 
-  packages: Package[] = [
-    new Package('frango', 'filé de frango ao molho', 'https://vovopalmirinha.com.br/wp-content/uploads/2016/05/frango-molho.jpg'),
-    new Package('frango', 'filé de frango ao molho', 'https://vovopalmirinha.com.br/wp-content/uploads/2016/05/frango-molho.jpg')
-  ];
+  constructor(
+    private packageService: PackagesListService
+  ){
 
-  onPackageSelected(packageSelected : Package){
-    this.packageWasSelected.emit(packageSelected)
+  }
 
+  ngOnInit(): void{
+    this.package = this.packageService.getPackages();
   }
 }
