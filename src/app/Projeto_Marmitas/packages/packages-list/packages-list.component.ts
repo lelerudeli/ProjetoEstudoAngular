@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { PackagesItemComponent } from './packages-item/packages-item.component';
 import { Package } from './package.model';
 import { CommonModule } from '@angular/common';
@@ -12,9 +12,15 @@ import { CommonModule } from '@angular/common';
 })
 export class PackagesListComponent {
 
+  @Output() packageWasSelected = new EventEmitter<Package>();
+
   packages: Package[] = [
     new Package('frango', 'filé de frango ao molho', 'https://vovopalmirinha.com.br/wp-content/uploads/2016/05/frango-molho.jpg'),
     new Package('frango', 'filé de frango ao molho', 'https://vovopalmirinha.com.br/wp-content/uploads/2016/05/frango-molho.jpg')
-
   ];
+
+  onPackageSelected(packageSelected : Package){
+    this.packageWasSelected.emit(packageSelected)
+
+  }
 }

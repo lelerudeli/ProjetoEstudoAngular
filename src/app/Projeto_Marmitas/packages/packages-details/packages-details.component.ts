@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Package } from '../packages-list/package.model';
 
 @Component({
   selector: 'app-packages-details',
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class PackagesDetailsComponent {
 
+  @Input() packageSelected! : Package;
+  
 }

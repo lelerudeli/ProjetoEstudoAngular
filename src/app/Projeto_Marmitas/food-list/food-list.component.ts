@@ -18,4 +18,7 @@ export class FoodListComponent {
     new Food('molho', 3)
   ];
 
+  onFoodAdded(food: Food){
+  this.foodList.push(food)
+}
 }

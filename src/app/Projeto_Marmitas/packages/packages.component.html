@@ -1,10 +1,15 @@
 <div class="row">
     <div class="col-md-5">
-        <app-packages-list></app-packages-list>
+        <app-packages-list (packageWasSelected)="selectedPackage = $event"></app-packages-list>
         
     </div>
     <div class="col-md-7">
-        <app-packages-details></app-packages-details> 
+        <app-packages-details 
+        *ngIf="selectedPackage; else info"
+        [packageSelected]="selectedPackage"></app-packages-details> 
+        <ng-template #info>
+            <p>Por favor selecione uma marmita.</p>
+        </ng-template>
 
     </div>
 </div>

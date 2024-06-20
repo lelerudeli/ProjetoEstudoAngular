@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Package } from '../package.model';
 
 @Component({
   selector: 'app-packages-item',
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './packages-item.component.css'
 })
 export class PackagesItemComponent {
+
+  @Input() package! : Package;
+  @Output() packageSelected = new EventEmitter<void>();
+
+  onSelected(){
+    this.packageSelected.emit
+  }
 
 }
