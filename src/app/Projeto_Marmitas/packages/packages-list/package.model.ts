@@ -11,8 +11,6 @@ export class Package {
         this.name = n;
         this.desc = d;
         this.imagePath = i;
-        this.ingredients = ingredients
-
-
+        this.ingredients = ingredients;
     }
 }

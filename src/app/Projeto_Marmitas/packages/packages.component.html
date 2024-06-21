@@ -4,12 +4,7 @@
         
     </div>
     <div class="col-md-7">
-        <app-packages-details 
-        *ngIf="selectedPackage; else info"
-        [packageSelected]="selectedPackage"></app-packages-details> 
-        <ng-template #info>
-            <p>Por favor selecione uma marmita.</p>
-        </ng-template>
+      <router-outlet></router-outlet>
 
     </div>
 </div>

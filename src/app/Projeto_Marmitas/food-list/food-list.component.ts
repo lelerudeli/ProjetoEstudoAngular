@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Injectable, OnDestroy } from '@angular/core';
 import { FoodEditComponent } from './food-edit/food-edit.component';
 import { Food } from '../shared/food.model';
 import { CommonModule } from '@angular/common';

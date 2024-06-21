@@ -21,7 +21,6 @@ export class PackagesItemComponent {
 
   onSelected(){
     this.packageService.packageSelected.emit(this.package);
-
-  }
+  } //mudar aqui para aparecer os detalhes 
 
 }

@@ -5,11 +5,12 @@ import { Package } from './packages-list/package.model';
 import { CommonModule } from '@angular/common';
 import { PackagesListService } from '../services/packages-list.service';
 import { Subscription } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-packages',
   standalone: true,
-  imports: [PackagesListComponent, PackagesDetailsComponent, CommonModule],
+  imports: [PackagesListComponent, PackagesDetailsComponent, CommonModule, RouterModule],
   templateUrl: './packages.component.html',
   styleUrl: './packages.component.css',
   providers: [PackagesListService]

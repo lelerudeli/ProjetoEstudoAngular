@@ -1,0 +1,12 @@
+.dropdown-menu > li > a {
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+    margin: 10px;
+}
+
+.dropdown-menu > li > a:hover{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}

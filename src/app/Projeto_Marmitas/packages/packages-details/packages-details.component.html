@@ -25,9 +25,9 @@
             </button>
     
             <ul class="dropdown-menu">
-                <li><a href="#"> Para a lista de compras </a></li>
-                <li><a href="#"> Editar marmitas</a></li>
-                <li><a href="#"> Remover marmita</a></li>
+                <li><a (click)="addToFoodList()">Adicionar à lista de alimentos </a></li>
+                <li><a> Editar marmitas</a></li>
+                <li><a> Remover marmita</a></li>
             </ul>
         </div>
        
@@ -48,7 +48,6 @@
         <ul class="list-group">
             <li class="list-group-item" *ngFor=" let ingredient of packageSelected.ingredients">
                 {{ingredient.name}} ({{ingredient.amount}})
-
             </li>
         </ul>
     </div>
