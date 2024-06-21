@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-12">
-        <img src="" alt="" class="img-responsive">
+        <img src="{{packageSelected.imagePath}}" alt="" class="img-responsive">
     </div>
 </div>
 
@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="col-12">
-        <h1> nome marmita </h1>
+        <h1> {{packageSelected.name}} </h1>
     </div>
 </div>
 
@@ -38,13 +38,18 @@
 
 <div class="row">
     <div class="col-12">
-        descrição
+        <h4>{{packageSelected.desc}}</h4>
     </div>
 </div>
 
 <!-- ingredientes -->
 <div class="row">
     <div class="col-12">
-        ingredientes
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor=" let ingredient of packageSelected.ingredients">
+                {{ingredient.name}} ({{ingredient.amount}})
+
+            </li>
+        </ul>
     </div>
 </div>
